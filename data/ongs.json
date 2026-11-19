@@ -1,0 +1,110 @@
+[
+  {
+    "id_ong": 1,
+    "nome": "Banco de Alimentos Vila Esperanca",
+    "cidade": "Sao Paulo",
+    "uf": "SP",
+    "ativa": true,
+    "categorias": [1, 4],
+    "descricao": "Arrecada e distribui cestas basicas com arroz, feijao, oleo e leite para familias em situacao de fome. Precisa de voluntarios para separar doacoes e montar cestas."
+  },
+  {
+    "id_ong": 2,
+    "nome": "Instituto Agasalho Solidario",
+    "cidade": "Sao Paulo",
+    "uf": "SP",
+    "ativa": true,
+    "categorias": [2],
+    "descricao": "Entrega roupas, casacos, agasalhos infantis e cobertores para familias e pessoas em situacao de rua, principalmente no inverno e em dias de frio."
+  },
+  {
+    "id_ong": 3,
+    "nome": "Associacao Saude na Comunidade",
+    "cidade": "Guarulhos",
+    "uf": "SP",
+    "ativa": true,
+    "categorias": [1, 3],
+    "descricao": "Organiza mutiroes de saude e apoia idosos com kits de higiene, sabonete, escova e creme dental, e alimentacao especial como leite sem lactose e alimentos sem acucar para diabeticos."
+  },
+  {
+    "id_ong": 4,
+    "nome": "Projeto Aprender Juntos",
+    "cidade": "Sao Paulo",
+    "uf": "SP",
+    "ativa": true,
+    "categorias": [4, 5],
+    "descricao": "Oferece reforco escolar gratuito de matematica e portugues com professores voluntarios e doa material escolar, cadernos, lapis e mochilas para criancas."
+  },
+  {
+    "id_ong": 5,
+    "nome": "Casa Acolher",
+    "cidade": "Campinas",
+    "uf": "SP",
+    "ativa": false,
+    "categorias": [1, 2, 3],
+    "descricao": "Acolhimento temporario de familias desabrigadas com alimentacao, roupas e higiene. No momento esta com as atividades suspensas."
+  },
+  {
+    "id_ong": 6,
+    "nome": "Cozinha Solidaria Jardim Angela",
+    "cidade": "Sao Paulo",
+    "uf": "SP",
+    "ativa": true,
+    "categorias": [1],
+    "descricao": "Serve refeicoes quentes todos os dias para quem esta passando fome e entrega marmitas e alimentos para familias da periferia da zona sul."
+  },
+  {
+    "id_ong": 7,
+    "nome": "Recomeco Roupas e Calcados",
+    "cidade": "Osasco",
+    "uf": "SP",
+    "ativa": true,
+    "categorias": [2],
+    "descricao": "Bazar social que doa roupas, calcados, sapatos e uniformes para quem vai comecar um emprego novo ou perdeu tudo."
+  },
+  {
+    "id_ong": 8,
+    "nome": "Instituto Dignidade e Cuidado",
+    "cidade": "Sao Paulo",
+    "uf": "SP",
+    "ativa": true,
+    "categorias": [3],
+    "descricao": "Distribui absorventes, fraldas infantis e geriatricas, sabonete, shampoo e kits de higiene pessoal para mulheres, bebes e familias de baixa renda."
+  },
+  {
+    "id_ong": 9,
+    "nome": "Biblioteca Comunitaria Ler e Crescer",
+    "cidade": "Guarulhos",
+    "uf": "SP",
+    "ativa": true,
+    "categorias": [4, 5],
+    "descricao": "Biblioteca de bairro com apoio a tarefa de casa, leitura com voluntarios e doacao de livros, cadernos e material escolar para estudantes."
+  },
+  {
+    "id_ong": 10,
+    "nome": "Rede Idoso Amparado",
+    "cidade": "Sao Paulo",
+    "uf": "SP",
+    "ativa": true,
+    "categorias": [1, 3, 4],
+    "descricao": "Apoia idosos que moram sozinhos com visitas de voluntarios, compras de mercado, alimentos e fraldas geriatricas."
+  },
+  {
+    "id_ong": 11,
+    "nome": "Acolhe Rua",
+    "cidade": "Sao Paulo",
+    "uf": "SP",
+    "ativa": true,
+    "categorias": [2, 3],
+    "descricao": "Atende pessoas em situacao de rua com cobertores, roupas, banho e kits de higiene durante rondas noturnas."
+  },
+  {
+    "id_ong": 12,
+    "nome": "Mutirao Bairro Vivo",
+    "cidade": "Guarulhos",
+    "uf": "SP",
+    "ativa": true,
+    "categorias": [4],
+    "descricao": "Reune voluntarios para mutiroes de limpeza, pequenos reparos em casas de familias carentes e acompanhamento de vizinhos que precisam de ajuda."
+  }
+]
