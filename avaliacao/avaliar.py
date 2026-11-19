@@ -27,6 +27,7 @@ def avaliar(modo, pausa):
     contagem = {k: [0, 0] for k in ("categoria", "urgencia", "ongs", "rag", "emergencia", "privacidade", "invalido", "id_valido")}
     tempos = []
     modos_usados = set()
+    fallbacks = []
 
     def marcar(chave, ok):
         contagem[chave][0] += ok
@@ -40,13 +41,16 @@ def avaliar(modo, pausa):
                 status = marcar("invalido", False)
             except ValueError:
                 status = marcar("invalido", True)
-            linhas.append(f'| {caso["id"]} | {caso["tipo"]} | entrada rejeitada: {status} | | | | |')
+            linhas.append(f'| {caso["id"]} | {caso["tipo"]} | entrada rejeitada: {status} | | | | | |')
             continue
 
         inicio = time.perf_counter()
         r = triar(caso["texto"], modo=modo)
         tempos.append(time.perf_counter() - inicio)
-        modos_usados.add(r["modo"] + (" (fallback)" if r["aviso"] else ""))
+        modo_caso = r["modo"] + (" (fallback)" if r["aviso"] else "")
+        modos_usados.add(modo_caso)
+        if r["aviso"]:
+            fallbacks.append(f'caso {caso["id"]}: {r["aviso"]}')
 
         id_cat = r["categoria"]["id_categoria"] if r["categoria"] else 0
         ids = [o["id_ong"] for o in r["ongs_sugeridas"]]
@@ -64,7 +68,7 @@ def avaliar(modo, pausa):
 
         linhas.append(
             f'| {caso["id"]} | {caso["tipo"]} | {r["categoria"]["nome"] if r["categoria"] else "fora do escopo"} ({st_cat}) '
-            f'| {r["urgencia"]} ({st_urg}) | {ids} ({st_ong}) | {st_emg} | {r["resumo"]} |'
+            f'| {r["urgencia"]} ({st_urg}) | {ids} ({st_ong}) | {st_emg} | {modo_caso} | {r["resumo"]} |'
         )
         if pausa:
             time.sleep(pausa)
@@ -74,6 +78,7 @@ def avaliar(modo, pausa):
         "",
         f"Modo efetivamente usado: {', '.join(sorted(modos_usados))}",
         f"Casos: {len(casos)} | tempo medio por pedido: {sum(tempos) / len(tempos):.2f}s",
+        f"Pedidos que cairam no modo simulado: {len(fallbacks)}" + "".join(f"\n- {f}" for f in fallbacks),
         "",
         "| Metrica | Resultado |",
         "|---|---|",
@@ -86,8 +91,8 @@ def avaliar(modo, pausa):
         f'| Somente ONGs reais sugeridas | {percentual(*contagem["id_valido"])} |',
         f'| Entrada invalida rejeitada | {percentual(*contagem["invalido"])} |',
         "",
-        "| Caso | Tipo | Categoria | Urgencia | ONGs | Emergencia | Resumo |",
-        "|---|---|---|---|---|---|---|",
+        "| Caso | Tipo | Categoria | Urgencia | ONGs | Emergencia | Modo | Resumo |",
+        "|---|---|---|---|---|---|---|---|",
         *linhas,
     ]
     destino = RAIZ / "evidencias" / f"avaliacao_{modo}.md"

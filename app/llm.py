@@ -6,7 +6,7 @@ from google.genai import errors, types
 
 from app.dados import CATEGORIAS, URGENCIAS
 
-MODELO_PADRAO = "gemini-2.5-flash"
+MODELO_PADRAO = "gemini-3.5-flash-lite"
 
 INSTRUCOES = """Voce faz a triagem de pedidos de ajuda numa plataforma que conecta pessoas a ONGs.
 Responda somente com o JSON pedido. Regras:
